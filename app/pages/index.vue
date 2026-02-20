@@ -1,0 +1,41 @@
+<template>
+    <div class="h-full flex items-center justify-center space-x-5 overflow-hidden">
+        <div>
+            <div class="text-white mb-2">
+                <div class="text-lg">
+                    Hi all, I am
+                </div>
+                <h1 class="text-6xl">
+                    Stepan Turitsin
+                </h1>
+            </div>
+            <div class="text-3xl text-accent3">
+                > <SharedTypingText :lines="typingLines" />
+            </div>
+            <SharedCode class="text-accent2 mb-4" :code="code" />
+            <div class="space-x-3">
+                <SharedBaseButton v-slot="slotProps" as-child variant="primary">
+                    <NuxtLink to="/about" :class="slotProps.class">about-me</NuxtLink>
+                </SharedBaseButton>
+                <SharedBaseButton v-slot="slotProps">
+                    <NuxtLink to="/projects" :class="slotProps.class">projects</NuxtLink>
+                </SharedBaseButton>
+            </div>
+        </div>
+        <SharedBlurEffect>
+            <SharedSnakeGame />
+        </SharedBlurEffect>
+    </div>
+</template>
+
+<script setup lang="ts">
+const config = useRuntimeConfig();
+
+const code = `
+// Let's play snake for a bit
+// you can also see it on my Github page
+const githubLink = "https://github.com/stepan323446/snake2d"
+`;
+
+const typingLines = config.public.homepageLines;
+</script>

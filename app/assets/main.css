@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+* {
+    box-sizing: border-box
+}
+body {
+    @apply text-default;
+}
+svg.svg-inline--fa {
+  display: inline-block;
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+}
+.dynamic-content a {
+  @apply text-accent1 hover:text-accent2;
+}
+.swiper-container {
+  min-width: 0;
+  overflow: hidden;
+}
+.swiper-pagination {
+  @apply space-x-3 flex justify-center mt-5;
+}
+.swiper-pagination-bullet {
+  @apply bg-default h-2 w-10 inline-block cursor-pointer rounded-sm;
+}
+.swiper-pagination-bullet-active {
+  @apply bg-accent1;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  @apply absolute top-1/2 -translate-y-1/2 p-3 bg-deep z-10 cursor-pointer select-none rounded-sm border border-border-color opacity-0 transition-opacity; 
+}
+.swiper:hover .swiper-button-prev,
+.swiper:hover .swiper-button-next {
+  @apply opacity-100;
+}
+.swiper-button-prev {
+  @apply left-2 rotate-180;
+}
+.swiper-button-next {
+  @apply right-2;
+}
