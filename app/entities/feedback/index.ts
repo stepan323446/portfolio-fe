@@ -1,0 +1,1 @@
+export { default as useFeedbackRequest } from './model/hooks/useFeedbackRequest';

@@ -1,75 +1,46 @@
-# Nuxt Minimal Starter
+# Portfolio (Frontend part)
+
+This is the frontend part of web application **Portfolio** which is based on Nuxt framework
+
+## Project Overview
+
+The Frontend Portfolio provides a visual representation of the website. The design idea was taken from a template and extensively modified by me. [Nuxt](https://nuxt.com/) was chosen as the framework, with Pinia used for state management. No UI libraries were applied.
+
+## Features
+- Separation of business logic into entities/.
+- Modular architecture, dividing components into `Shared`, `Features`, and `Widgets`.
+- Styles written with **Tailwind CSS**. No UI libraries were used.
+- **SSR rendering** powered by Nuxt, with SEO optimization and high Lighthouse scores.
+
+## Installing
+
+### Manually
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-## Setup
-
-Make sure to install dependencies:
+1. Make sure to install dependencies:
 
 ```bash
 # npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+2. Create a `.env` file and fill it out using `.env.example` as a template
+
+3. Development Server
 
 Start the development server on `http://localhost:3000`:
 
 ```bash
 # npm
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+4. Production
 
 Build the application for production:
 
 ```bash
 # npm
 npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
 ```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

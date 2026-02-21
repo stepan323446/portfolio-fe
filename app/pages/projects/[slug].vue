@@ -53,11 +53,18 @@ import useBioStore from '~/store/useBioStore';
 
 const { biography } = useBioStore();
 const route = useRoute()
-const slug = route.params.slug as string
+const slug = route.params.slug as string;
 
 const { data: project, error } = await useProject(slug, {
     lazy: true
 });
+
+useSeoMeta({
+    title: computed(() => project.value?.title ?? 'Loading...'),
+    description: computed(() => project.value?.excerpt ?? ''),
+    ogImage: computed(() => project.value?.background ?? '')
+})
+
 const { data: projects } = useProjects({
     server: false
 });

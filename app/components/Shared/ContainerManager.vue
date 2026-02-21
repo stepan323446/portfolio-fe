@@ -7,11 +7,11 @@
             <div class="w-full text-center h-10 flex items-center justify-center border-border-color border-b-2 border-t-2 lg:border-t-0">
                 {{ title }}
             </div>
-            <div v-if="hasSeparate" class="h-full flex">
-                <div class="content scrollbar scrollbar-always w-1/2 border-border-color lg:border-r-2">
+            <div v-if="hasSeparate" class="h-full flex flex-col lg:flex-row">
+                <div class="content scrollbar scrollbar-always lg:w-1/2 border-border-color lg:border-r-2">
                     <slot name="left"></slot>
                 </div>
-                <div class="content scrollbar scrollbar-always w-1/2">
+                <div class="content scrollbar scrollbar-always lg:w-1/2">
                     <slot name="right"></slot>
                 </div>
             </div>
@@ -39,18 +39,7 @@ const {
 </script>
 
 <style scoped>
-.scrollbar {
-    @apply overflow-y-auto;
-}
-.scrollbar::-webkit-scrollbar {
-    @apply w-5 border-0 border-l-2 border-border-color border-solid;
-}
-.scrollbar::-webkit-scrollbar-thumb {
-    @apply bg-default border-[5px] border-solid border-transparent outline-0 bg-clip-padding;
-}
-.scrollbar-always {
-    @apply overflow-y-auto lg:overflow-y-scroll;
-}
+
 .content {
     @apply py-5 px-3 lg:px-10 lg:h-[calc(100%-40px)];
 }

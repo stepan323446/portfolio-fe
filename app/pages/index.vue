@@ -38,4 +38,14 @@ const githubLink = "https://github.com/stepan323446/snake2d"
 `;
 
 const typingLines = config.public.homepageLines;
+
+useHead({
+    title: 'Stepan Turitsin - Fullstack Web Developer | Nuxt, Next, Django',
+    titleTemplate: null,
+});
+
+useSeoMeta({
+    description: "Hi, I'm Stepan Turitsin. Fullstack Web Developer specializing in Nuxt, Next, and Django. Building scalable SSR applications, REST APIs, and e-commerce solutions with TypeScript, Docker, and modern web technologies."
+});
+
 </script>

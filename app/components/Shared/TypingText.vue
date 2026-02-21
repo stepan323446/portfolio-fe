@@ -11,6 +11,10 @@ interface TypingTextProps {
     wordTypingTime?: number,
     delayLine?: number
 }
+interface TypingTextEmits {
+    (e: 'typing', value: string): void
+}
+const emit = defineEmits<TypingTextEmits>();
 
 const { 
     lines,
@@ -30,6 +34,7 @@ const asyncWriteLoop = async () => {
 
         for (let i = 0; i < currentLine.length; i++) {
             currentLineWrite.value = currentLine.substring(0, i + 1);
+            emit('typing', currentLineWrite.value);
 
             await sleep(wordTypingTime, controller.signal);
         }
@@ -37,6 +42,7 @@ const asyncWriteLoop = async () => {
 
         for (let i = currentLine.length; i > 0; i--) {
             currentLineWrite.value = currentLine.substring(0, i - 1);
+            emit('typing', currentLineWrite.value);
 
             await sleep(wordTypingTime, controller.signal);
         }

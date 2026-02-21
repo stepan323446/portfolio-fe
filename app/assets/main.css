@@ -42,3 +42,27 @@ svg.svg-inline--fa {
 .swiper-button-next {
   @apply right-2;
 }
+.input-area label {
+  @apply block mb-1;
+}
+.input-area input,
+.input-area textarea {
+  @apply bg-deep border-border-color border text-lg px-2 py-2 rounded-md w-full;
+}
+.input-area input:focus,
+.input-area textarea:focus {
+  @apply outline-none border-accent2;
+}
+
+.scrollbar {
+    @apply overflow-y-auto;
+}
+.scrollbar::-webkit-scrollbar {
+    @apply w-5 border-0 border-l-2 border-border-color border-solid;
+}
+.scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-default border-[5px] border-solid border-transparent outline-0 bg-clip-padding;
+}
+.scrollbar-always {
+    @apply overflow-y-auto lg:overflow-y-scroll;
+}

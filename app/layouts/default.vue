@@ -1,5 +1,10 @@
 <script setup lang="ts">
 import 'swiper/css';
+
+useHead({
+    titleTemplate: '%s - Stepan Turitsin',
+    
+})
 </script>
 
 <template>

@@ -14,10 +14,22 @@ interface CodeProps {
 
 const { code, language = 'javascript' } = defineProps<CodeProps>()
 
+const highlight = async () => {
+  await nextTick()
+
+  if (!codeBlock.value) return
+
+  codeBlock.value.removeAttribute('data-highlighted')
+  codeBlock.value.classList.remove('hljs')
+
+  hljs.highlightElement(codeBlock.value)
+}
+
 onMounted(() => {
-    if(codeBlock.value)
-        hljs.highlightElement(codeBlock.value);
+    highlight();
 });
+
+watch(() => code, highlight)
 </script>
 
 <style>
@@ -29,5 +41,11 @@ onMounted(() => {
 }
 .hljs-string {
     @apply text-accent1;
+}
+.hljs .function_ {
+    @apply text-yellow-300;
+}
+.hljs-attr {
+    @apply text-gray-300;
 }
 </style>

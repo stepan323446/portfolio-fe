@@ -6,7 +6,7 @@
     v-else 
     :class="classes" 
     :to="link" 
-    active-class="text-white border-l-[7px] lg:border-l-0 lg:border-b-[3px] lg:border-b-accent1 border-l-accent1"
+    active-class="text-white border-l-[7px] lg:border-l-0 lg:border-b-[3px] lg:border-b-accent1 border-l-accent1 lg:border-l-border-color"
     @click="clickOnLink()">
         <slot></slot>
     </NuxtLink>

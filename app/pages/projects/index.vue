@@ -1,5 +1,6 @@
 <template>
     <SharedContainerManager :with-aside="false" title="projects">
+        <h1 class="hidden">Projects</h1>
         <div class="grid grid-cols-1 lg:grid-cols-[1fr_350px] xl:grid-cols-[1fr_450px] mb-8 gap-5">
             <div>
                 <h2 class="text-white text-lg mb-4"># Latest project</h2>
@@ -32,10 +33,14 @@
 <script setup lang="ts">
 import { useProjects } from '~/entities/projects';
 
+useSeoMeta({
+    description: 'A collection of fullstack web development projects. Featuring scalable architectures, REST APIs, authentication systems, and modern web technologies.'
+})
 
 const { data: projects } = await useProjects({
     lazy: true
 });
+
 const latestProject = computed(() => {
     if(!projects.value)
         return projects.value;
