@@ -16,9 +16,10 @@ jobs:
         key: ${{ secrets.SSH_SECRET_KEY }}
         port: 22
         script: |
+          nvm use 22
           cd /home/steve/sites/steve-dekart.xyz/portfolio-fe/
           git pull
-          npm install
+          npm ci
           npm run build
           pm2 restart portfolio-fe
           pm2 save
