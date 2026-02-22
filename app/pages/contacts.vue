@@ -44,14 +44,28 @@
             
         </template>
         <template #right>
-            <SharedPanel class="p-4 overflow-hidden scrollbar overflow-x-auto">
-                <SharedCode :code="code" />
-            </SharedPanel>
+            <div>
+                <SharedPanel class="p-4 overflow-hidden scrollbar overflow-x-auto mb-4">
+                    <SharedCode :code="code" />
+                </SharedPanel>
+
+                <div class="space-y-4">
+                    <FeatureSocialLink
+                        v-for="(soc, i) in socialLinks" 
+                        :key="i"
+                        :icon="soc.icon"
+                        :name="soc.name"
+                        :description="soc.description"
+                        :link="soc.link"
+                        :color-hue="soc.colorHue" />
+                </div>
+            </div>
         </template>
     </SharedContainerManager>
 </template>
 
 <script setup lang="ts">
+import { faLinkedin, faTelegram } from '@fortawesome/free-brands-svg-icons';
 import { faCircleXmark } from '@fortawesome/free-regular-svg-icons';
 import { faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons';
 import { useFeedbackRequest } from '~/entities/feedback';
@@ -77,6 +91,23 @@ button.addEventListener('click', () => {
     form.send(message));
 }`
 });
+
+const socialLinks = [
+    {
+        icon: faLinkedin,
+        name: 'LinkedIn',
+        description: 'LinkedIn is a professional social networking platform where users connect with colleagues, showcase their experience, share industry insights, and explore job and business opportunities.',
+        link: 'https://www.linkedin.com/in/stepan-turitsin/',
+        colorHue: 220
+    },
+    {
+        icon: faTelegram,
+        name: 'Telegram',
+        description: 'Telegram is a cloud-based messaging platform focused on speed, security, and large-scale communities. It supports private chats, public channels, and bots, and is especially popular in Russia and several CIS countries.',
+        link: 'https://t.me/SteveDekart',
+        colorHue: 190
+    }
+]
 
 const submitForm = async (e: SubmitEvent) => {
     e.preventDefault();
