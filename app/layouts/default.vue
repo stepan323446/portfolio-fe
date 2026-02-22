@@ -10,7 +10,7 @@ useHead({
 <template>
     <div class="bg-main-background min-h-screen">
         <WidgetHeader />
-        <div class="lg:h-[calc(100vh-105px)]">
+        <div class="lg:h-[calc(100vh-105px)] flex flex-col">
             <slot></slot>
         </div>
         <WidgetFooter />

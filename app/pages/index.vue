@@ -1,6 +1,6 @@
 <template>
-    <div class="h-full flex items-center justify-center space-x-5 overflow-hidden">
-        <div>
+    <div class="h-screen lg:h-full flex items-center justify-center space-x-5 overflow-hidden">
+        <div class="px-3 z-10">
             <div class="text-white mb-2">
                 <div class="text-lg">
                     Hi all, I am
@@ -9,10 +9,10 @@
                     Stepan Turitsin
                 </h1>
             </div>
-            <div class="text-3xl text-accent3">
+            <div class="text-3xl text-accent3 mb-4 lg:mb-0">
                 > <SharedTypingText :lines="typingLines" />
             </div>
-            <SharedCode class="text-accent2 mb-4" :code="code" />
+            <SharedCode class="text-accent2 mb-4 hidden lg:block" :code="code" />
             <div class="space-x-3">
                 <SharedBaseButton v-slot="slotProps" as-child variant="primary">
                     <NuxtLink to="/about" :class="slotProps.class">about-me</NuxtLink>

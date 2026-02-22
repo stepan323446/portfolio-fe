@@ -1,6 +1,6 @@
 <template>
     <NuxtLayout>
-        <div class="h-full flex items-center justify-center">
+        <div class="h-screen lg:h-full flex items-center justify-center">
             <div class="max-w-80 text-center">
                 <h1 class="text-8xl mb-3">{{ error.status }}</h1>
                 <div class="text-xl">{{ errorMessage }}</div>

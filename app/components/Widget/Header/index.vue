@@ -1,5 +1,5 @@
 <template>
-    <div class="flex border-b-2 border-border-color w-full">
+    <div class="fixed lg:relative flex border-b-2 border-border-color bg-main-background z-50 w-full">
         <div class="lg:border-r-2 border-border-color flex items-center py-3 pl-6 w-[300px] shrink-0">
             stepan-turitsin
         </div>
@@ -8,7 +8,7 @@
             { 'hidden': !burgerMenu },
             'lg:flex', 'w-full', 'bg-main-background', 'z-50',
             'lg:relative', 'lg:mt-0', 'lg:h-auto',
-            'fixed', 'mt-[50px]', 'h-[calc(100%-50px)]'
+            'fixed', 'mt-[49px]', 'h-[calc(100%-50px)]'
 
         ]">
             <ul 
