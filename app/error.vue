@@ -17,6 +17,10 @@ interface ErrorPageProps {
 }
 const { error } = defineProps<ErrorPageProps>()
 
+useSeoMeta({
+    title: error.status
+});
+
 const errorMessage = computed(() => {
     switch (error.status) {
         case 404:

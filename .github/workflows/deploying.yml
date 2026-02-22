@@ -18,3 +18,5 @@ jobs:
         script: |
           cd /home/steve/sites/steve-dekart.xyz/portfolio-fe/
           git pull
+          docker compose up -d --build --remove-orphans
+          docker image prune -f
