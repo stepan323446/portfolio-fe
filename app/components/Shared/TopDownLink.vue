@@ -6,7 +6,7 @@
     v-else 
     :class="classes" 
     :to="link" 
-    active-class="text-white border-l-[7px] lg:border-l-0 lg:border-b-[3px] lg:border-b-accent1 border-l-accent1 lg:border-l-border-color"
+    active-class="text-white active"
     @click="clickOnLink()">
         <slot></slot>
     </NuxtLink>
@@ -31,7 +31,7 @@ const {
 const emit = defineEmits<TopDownLinkEmits>();
 
 const classes = [
-    'block', 'px-8', 'py-4', 'font-light', 'hover:text-white', 'text-base/4',
+    'relative', 'block', 'px-8', 'py-4', 'font-light', 'hover:text-white', 'text-base/4',
     'border-border-color',
     'border-b-[1px]', 'lg:border-b-0',
     {
@@ -44,3 +44,10 @@ const clickOnLink = () => {
     emit('click');
 }
 </script>
+
+<style scoped>
+.active::before {
+    content: '';
+    @apply absolute left-0 bottom-0 w-[6px] h-full lg:w-full lg:h-[3px] bg-accent1;
+}
+</style>
