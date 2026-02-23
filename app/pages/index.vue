@@ -44,8 +44,4 @@ useHead({
     titleTemplate: null,
 });
 
-useSeoMeta({
-    description: "Hi, I'm Stepan Turitsin. Fullstack Web Developer specializing in Nuxt, Next, and Django. Building scalable SSR applications, REST APIs, and e-commerce solutions with TypeScript, Docker, and modern web technologies."
-});
-
 </script>

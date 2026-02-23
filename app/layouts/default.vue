@@ -1,10 +1,19 @@
 <script setup lang="ts">
 import 'swiper/css';
+const url = useRequestURL()
+
+const fullUrl = `${url.protocol}//${url.host}`
 
 useHead({
-    titleTemplate: '%s - Stepan Turitsin',
-    
-})
+    titleTemplate: '%s - Stepan Turitsin'
+});
+
+useSeoMeta({
+    description: "Hi, I'm Stepan Turitsin. Fullstack Web Developer specializing in Nuxt, Next, and Django. Building scalable SSR applications, REST APIs, and e-commerce solutions with TypeScript, Docker, and modern web technologies.",
+    ogImage: `${fullUrl}/thumbnail.png`,
+    ogType: 'website',
+    twitterCard: 'summary_large_image'
+});
 </script>
 
 <template>

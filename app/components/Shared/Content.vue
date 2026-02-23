@@ -13,7 +13,7 @@ defineProps<ContentProps>();
 
 <style>
 .content-ckeditor {
-    font-family: "Roboto", sans-serif;
+    font-family: "Roboto Mono", monospace;
 }
 .content-ckeditor p,
 .content-ckeditor ul {
@@ -27,6 +27,9 @@ defineProps<ContentProps>();
 }
 .content-ckeditor li {
     margin-bottom: 10px;
+}
+.content-ckeditor li p:last-child {
+    margin-bottom: 0 !important;
 }
 .content-ckeditor h2 {
     @apply text-white mb-4 text-2xl font-sans;
