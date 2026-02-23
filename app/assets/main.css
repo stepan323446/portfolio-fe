@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&&family=Roboto&display=swap');
 * {
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 body {
     @apply text-default;

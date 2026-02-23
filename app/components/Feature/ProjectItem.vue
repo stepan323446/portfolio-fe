@@ -1,7 +1,7 @@
 <template>
     <div v-if="project" class="max-w-[360px] w-full flex flex-col">
         <div class="mb-4 truncate">
-            <span class="text-accent3 font-bold">{{ project.title }}</span> // <span>{{ project.type }}</span>
+            <span class="text-accent3 font-bold">{{ project.title }}</span> // <span>{{ project.subtitle }}</span>
         </div>
         <SharedPanel class="rounded-md overflow-hidden flex flex-col flex-1">
             <NuxtLink :to="link" class="relative block h-36 shrink-0">

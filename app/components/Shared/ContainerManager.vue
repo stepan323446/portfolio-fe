@@ -1,5 +1,5 @@
 <template>
-    <div class="h-full flex flex-col lg:flex-row min-w-0">
+    <div class="mt-[49px] lg:mt-0 h-full flex flex-col lg:flex-row min-w-0">
         <aside v-if="withAside" class="lg:h-full shrink-0 w-full lg:w-[300px] border-border-color border-r-2 scrollbar">
             <slot name="sidebar"></slot>
         </aside>

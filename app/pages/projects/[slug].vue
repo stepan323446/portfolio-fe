@@ -1,10 +1,7 @@
 <template>
     <SharedContainerManager :title="slug">
         <template #sidebar>
-            <SharedManagerSelect hide-top-border title="personal-info">
-                <FeaturePrimaryBio :biography="biography" />
-            </SharedManagerSelect>
-            <SharedManagerSelect title="contacts">
+            <SharedManagerSelect hide-top-border title="contacts">
                 <FeatureManagerSocialLinks />
             </SharedManagerSelect>
         </template>
@@ -31,6 +28,18 @@
                             <FeaturePrimarySkillIcon v-for="skill in project.primarySkills" :key="skill.id" display-text :skill="skill" class="mr-2 mb-2" />
                         </div>
                     </SharedAsideWidget>
+                    <SharedAsideWidget title="Timeline">
+                        <div class="space-y-2">
+                            <div>
+                                <div class="text-gray-300">Date Start:</div>
+                                <div>{{ formatLocaleDate(project?.dateCreated) }}</div>
+                            </div>
+                            <div>
+                                <div class="text-gray-300">Date End:</div>
+                                <div>{{ formatLocaleDate(project?.dateCompleted) }}</div>
+                            </div>
+                        </div>
+                    </SharedAsideWidget>
                     <SharedAsideWidget v-if="project && project.contributors.length > 0" title="Contributors">
                         <div class="space-y-2">
                             <FeatureContributorItem v-for="contr in project.contributors" :key="contr.id" :contributor="contr" />
@@ -49,9 +58,7 @@
 
 <script setup lang="ts">
 import { useProject, useProjects } from '~/entities/projects';
-import useBioStore from '~/store/useBioStore';
 
-const { biography } = useBioStore();
 const route = useRoute()
 const slug = route.params.slug as string;
 

@@ -3,11 +3,11 @@
         <h1 class="hidden">Projects</h1>
         <div class="grid grid-cols-1 lg:grid-cols-[1fr_350px] xl:grid-cols-[1fr_450px] mb-8 gap-5">
             <div>
-                <h2 class="text-white text-lg mb-4"># Latest project</h2>
+                <h2 class="text-white text-xl mb-4"># Latest project</h2>
                 <FeaturePrimaryProjectItem :project="latestProject" />
             </div>
             <div>
-                <h2 class="text-white text-lg mb-4"># Favorites</h2>
+                <h2 class="text-white text-xl mb-4"># Favorites</h2>
                 <div v-if="favoriteProjects" class="space-y-3">
                     <FeatureProjectRow v-for="proj in favoriteProjects" :key="proj.id" :project="proj" />
                 </div>
@@ -19,7 +19,7 @@
             </div>
         </div>
         <div>
-            <h2 class="text-white text-lg mb-4"># All projects</h2>
+            <h2 class="text-white text-xl mb-4"># All projects</h2>
             <div v-if="projects" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
                 <div v-for="proj in projects" :key="proj.id">
                     <FeatureProjectItem :project="proj" class="h-full" />

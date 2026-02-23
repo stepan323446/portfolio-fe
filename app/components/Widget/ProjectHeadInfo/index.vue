@@ -127,7 +127,7 @@ const setThumbsSwiper = (swiper: SwiperType) => {
 };
 
 const durationTime = computed(() => {
-    if(!project)
+    if (!project)
         return 'None';
 
     const start = dayjs(project.dateCreated)
@@ -135,21 +135,25 @@ const durationTime = computed(() => {
 
     const years = end.diff(start, "year")
     const months = end.diff(start.add(years, "year"), "month")
+    const days = end.diff(
+        start
+            .add(years, "year")
+            .add(months, "month"),
+        "day"
+    )
 
-    let yearLabel = `${years} year`;
-    let monthLabel = `${months} month`;
+    const parts = []
 
-    if(years > 1) {
-        yearLabel += 's';
-    }
-    if(months > 1) {
-        monthLabel += 's';
-    }
+    if (years > 0)
+        parts.push(`${years} year${years > 1 ? 's' : ''}`)
 
-    if(years > 0)
-        return `${yearLabel} ${monthLabel}`
-    else
-        return `${monthLabel}`
+    if (months > 0)
+        parts.push(`${months} month${months > 1 ? 's' : ''}`)
+
+    if (days > 0)
+        parts.push(`${days} day${days > 1 ? 's' : ''}`)
+
+    return parts.length ? parts.join(' ') : '0 days'
 });
 </script>
 

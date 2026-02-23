@@ -1,4 +1,4 @@
-import { getPrimaryBiography } from '~/entities/biography';
+import { getPrimaryBiography, mapBioResponseDtoToModel } from '~/entities/biography';
 import useBioStore from '~/store/useBioStore';
 
 export default defineNuxtPlugin(async () => {
@@ -7,6 +7,6 @@ export default defineNuxtPlugin(async () => {
   if (!biography) {
     const data = await getPrimaryBiography();
     if(data)
-      setBiography(data);
+      setBiography(mapBioResponseDtoToModel(data));
   }
 })
